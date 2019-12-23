@@ -16,12 +16,12 @@ Build forms with JSON Schema in React
 - It [doesn't fully covers](https://react-jsonschema-form.readthedocs.io/en/latest/#json-schema-supporting-status) the JSON Schema specification
 - It extends the specification in arbitrary ways:
 
-      	- [Schema and UI validations](https://react-jsonschema-form.readthedocs.io/en/latest/validation/)
-      	- [Theming](https://react-jsonschema-form.readthedocs.io/en/latest/form-customization/#the-uischema-object)
-      	- [Form data management](https://react-jsonschema-form.readthedocs.io/en/latest/#handling-of-schema-defaults)
-      	- extra error handling
-      	- [Advanced customizations ](https://react-jsonschema-form.readthedocs.io/en/latest/#handling-of-schema-defaults)
-      	- [Form customizations](https://react-jsonschema-form.readthedocs.io/en/latest/form-customization/)
+  - [Schema and UI validations](https://react-jsonschema-form.readthedocs.io/en/latest/validation/)
+  - [Theming](https://react-jsonschema-form.readthedocs.io/en/latest/form-customization/#the-uischema-object)
+  - [Form data management](https://react-jsonschema-form.readthedocs.io/en/latest/#handling-of-schema-defaults)
+  - extra error handling
+  - [Advanced customizations ](https://react-jsonschema-form.readthedocs.io/en/latest/#handling-of-schema-defaults)
+  - [Form customizations](https://react-jsonschema-form.readthedocs.io/en/latest/form-customization/)
 
 - It has lots of 3rd party libraries, addons: https://github.com/search?q=react+form+jsonschema&type=Repositories
   like [better conditionals](https://github.com/RxNT/react-jsonschema-form-conditionals) or [extra form fields and widgets](https://github.com/RxNT/react-jsonschema-form-extras)
