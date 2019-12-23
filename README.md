@@ -13,11 +13,22 @@ Build forms with JSON Schema in React
 
 - https://github.com/rjsf-team/react-jsonschema-form
 - It's the most versatile JSON Schema form generator found in [this research](https://github.com/metamn/react-forms)
-- It doesn't fully covers the JSON Schema specification, and, it extends the specification in an arbitrary way.
+- It [doesn't fully covers](https://react-jsonschema-form.readthedocs.io/en/latest/#json-schema-supporting-status) the JSON Schema specification
+- It extends the specification in arbitrary ways:
+
+      	- [Schema and UI validations](https://react-jsonschema-form.readthedocs.io/en/latest/validation/)
+      	- [Theming](https://react-jsonschema-form.readthedocs.io/en/latest/form-customization/#the-uischema-object)
+      	- [Form data management](https://react-jsonschema-form.readthedocs.io/en/latest/#handling-of-schema-defaults)
+      	- extra error handling
+      	- [Advanced customizations ](https://react-jsonschema-form.readthedocs.io/en/latest/#handling-of-schema-defaults)
+      	- [Form customizations](https://react-jsonschema-form.readthedocs.io/en/latest/form-customization/)
+
+- It has lots of 3rd party libraries, addons: https://github.com/search?q=react+form+jsonschema&type=Repositories
+  like [better conditionals](https://github.com/RxNT/react-jsonschema-form-conditionals) or [extra form fields and widgets](https://github.com/RxNT/react-jsonschema-form-extras)
 
 ## Features
 
-- https://json-schema.org/understanding-json-schema/reference/index.html
+Combining the libraries above we have:
 
 ### Semantic annotations
 
