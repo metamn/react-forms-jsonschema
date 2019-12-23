@@ -1,4 +1,4 @@
-#react-forms-jsonschema
+# react-forms-jsonschema
 
 Build forms with JSON Schema in React
 
@@ -7,12 +7,111 @@ Build forms with JSON Schema in React
 - https://json-schema.org/
 - It's an IETF draft specification not yet accepted as standard.
 - There is no other international standard. There is [OpenAPI](https://www.openapis.org/) for REST APIs which is similar to JSON Schema but more broader.
+- It can describe any data in any shape, like a complete UI with JSON Hyper-Schema
 
-### Features
+## react-jsonschema-form
+
+- https://github.com/rjsf-team/react-jsonschema-form
+- It's the most versatile JSON Schema form generator found in [this research](https://github.com/metamn/react-forms)
+- It doesn't fully covers the JSON Schema specification, and, it extends the specification in an arbitrary way.
+
+## Features
 
 - https://json-schema.org/understanding-json-schema/reference/index.html
 
-### Nesting with `object`
+### Semantic annotations
+
+- https://json-schema.org/understanding-json-schema/reference/generic.html
+- Describe, validate and attach test cases to a schema
+
+```js
+{
+  "title" : "Match anything",
+  "description" : "This is a schema that matches anything.",
+  "default" : "Default value",
+  "examples" : [
+    "Anything",
+    4035
+  ]
+}
+```
+
+### Combining schemas
+
+- https://json-schema.org/understanding-json-schema/reference/combining.html
+- https://rjsf-team.github.io/react-jsonschema-form/ "Any of", "One of" tabs
+
+```js
+{
+  "anyOf": [
+    { "type": "string", "maxLength": 5 },
+    { "type": "number", "minimum": 0 }
+  ]
+}
+```
+
+### Reusing schemas
+
+- https://json-schema.org/understanding-json-schema/structuring.html#reuse
+- https://rjsf-team.github.io/react-jsonschema-form/ "References" tab
+
+```js
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+
+  "definitions": {
+    "address": {
+      "type": "object",
+      "properties": {
+        "street_address": { "type": "string" },
+        "city":           { "type": "string" },
+        "state":          { "type": "string" }
+      },
+      "required": ["street_address", "city", "state"]
+    }
+  },
+
+  "type": "object",
+
+  "properties": {
+    "billing_address": { "$ref": "#/definitions/address" },
+    "shipping_address": { "$ref": "#/definitions/address" }
+  }
+}
+```
+
+### Conditionals
+
+- https://json-schema.org/understanding-json-schema/reference/conditionals.html
+- https://rjsf-team.github.io/react-jsonschema-form/ "Schema dependencies" tab
+
+```js
+{
+  "type": "object",
+  "properties": {
+    "street_address": {
+      "type": "string"
+    },
+    "country": {
+      "enum": ["United States of America", "Canada"]
+    }
+  },
+  "if": {
+    "properties": { "country": { "const": "United States of America" } }
+  },
+  "then": {
+    "properties": { "postal_code": { "pattern": "[0-9]{5}(-[0-9]{4})?" } }
+  },
+  "else": {
+    "properties": { "postal_code": { "pattern": "[A-Z][0-9][A-Z] [0-9][A-Z][0-9]" } }
+  }
+}
+```
+
+### Grouping
+
+- https://json-schema.org/understanding-json-schema/reference/object.html
+- https://rjsf-team.github.io/react-jsonschema-form/ "Nested" tab
 
 ```js
 {
@@ -20,16 +119,41 @@ Build forms with JSON Schema in React
   "properties": {
     "number":      { "type": "number" },
     "street_name": { "type": "string" }
+  }
 }
 ```
+
+### Lists
+
+- https://json-schema.org/understanding-json-schema/reference/array.html
+- https://rjsf-team.github.io/react-jsonschema-form/ "Arrays" tab
+
+```js
+{
+  "type": "array",
+  "items": {
+    "type": "string",
+	"enum": ["foo", "bar", "baz"]
+  }
+}
+```
+
+### Built-in string formats
+
+- https://json-schema.org/understanding-json-schema/reference/string.html#built-in-formats
+- https://rjsf-team.github.io/react-jsonschema-form/ "Date & time" tab
+
+```js
+"type": "string",
+"format": "date-time"
+```
+
+### Ranges
+
+- https://json-schema.org/understanding-json-schema/reference/numeric.html#range
+- https://rjsf-team.github.io/react-jsonschema-form/ "Numbers" tab
 
 ## Built on
 
 - https://github.com/facebook/create-react-app
 - https://github.com/rjsf-team/react-jsonschema-form
-
-## Preamble
-
-In https://github.com/metamn/react-forms there is a mini research to find the best library to generate React forms from JSON in a standard way.
-
-It seems currently https://github.com/rjsf-team/react-jsonschema-form is the most viable solution.
