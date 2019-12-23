@@ -23,8 +23,11 @@ Build forms with JSON Schema in React
   - [Advanced customizations ](https://react-jsonschema-form.readthedocs.io/en/latest/#handling-of-schema-defaults)
   - [Form customizations](https://react-jsonschema-form.readthedocs.io/en/latest/form-customization/)
 
-- It has lots of 3rd party libraries, addons: https://github.com/search?q=react+form+jsonschema&type=Repositories
-  like [better conditionals](https://github.com/RxNT/react-jsonschema-form-conditionals) or [extra form fields and widgets](https://github.com/RxNT/react-jsonschema-form-extras)
+- It has [lots of 3rd party libraries, addons](https://github.com/search?q=react+form+jsonschema&type=Repositories)
+  like:
+
+  - [better conditionals](https://github.com/RxNT/react-jsonschema-form-conditionals)
+  - [extra form fields and widgets](https://github.com/RxNT/react-jsonschema-form-extras)
 
 ## Features
 
@@ -32,8 +35,8 @@ Combining the libraries above we have:
 
 ### Semantic annotations
 
-- https://json-schema.org/understanding-json-schema/reference/generic.html
 - Describe, validate and attach test cases to a schema
+- https://json-schema.org/understanding-json-schema/reference/generic.html
 
 ```js
 {
@@ -47,22 +50,9 @@ Combining the libraries above we have:
 }
 ```
 
-### Combining schemas
-
-- https://json-schema.org/understanding-json-schema/reference/combining.html
-- https://rjsf-team.github.io/react-jsonschema-form/ "Any of", "One of" tabs
-
-```js
-{
-  "anyOf": [
-    { "type": "string", "maxLength": 5 },
-    { "type": "number", "minimum": 0 }
-  ]
-}
-```
-
 ### Reusing schemas
 
+- Build up large schemas from smaller components
 - https://json-schema.org/understanding-json-schema/structuring.html#reuse
 - https://rjsf-team.github.io/react-jsonschema-form/ "References" tab
 
@@ -93,6 +83,7 @@ Combining the libraries above we have:
 
 ### Conditionals
 
+- Display parts of the schema based on conditionals
 - https://json-schema.org/understanding-json-schema/reference/conditionals.html
 - https://rjsf-team.github.io/react-jsonschema-form/ "Schema dependencies" tab
 
@@ -121,6 +112,7 @@ Combining the libraries above we have:
 
 ### Grouping
 
+- Infinitely nested field groups
 - https://json-schema.org/understanding-json-schema/reference/object.html
 - https://rjsf-team.github.io/react-jsonschema-form/ "Nested" tab
 
@@ -136,6 +128,7 @@ Combining the libraries above we have:
 
 ### Lists
 
+- Iterables, enumerables, arrays, lists
 - https://json-schema.org/understanding-json-schema/reference/array.html
 - https://rjsf-team.github.io/react-jsonschema-form/ "Arrays" tab
 
@@ -151,6 +144,7 @@ Combining the libraries above we have:
 
 ### Built-in string formats
 
+- Pre-defined string formats for easy validations
 - https://json-schema.org/understanding-json-schema/reference/string.html#built-in-formats
 - https://rjsf-team.github.io/react-jsonschema-form/ "Date & time" tab
 
@@ -159,12 +153,17 @@ Combining the libraries above we have:
 "format": "date-time"
 ```
 
-### Ranges
+### Dynamic type shapes
 
-- https://json-schema.org/understanding-json-schema/reference/numeric.html#range
-- https://rjsf-team.github.io/react-jsonschema-form/ "Numbers" tab
+- A field can have dynamic shapes like in PropTypes and TypeScript
+- https://json-schema.org/understanding-json-schema/reference/combining.html
+- https://rjsf-team.github.io/react-jsonschema-form/ "Any of", "One of" tabs
 
-## Built on
-
-- https://github.com/facebook/create-react-app
-- https://github.com/rjsf-team/react-jsonschema-form
+```js
+{
+  "anyOf": [
+    { "type": "string", "maxLength": 5 },
+    { "type": "number", "minimum": 0 }
+  ]
+}
+```
