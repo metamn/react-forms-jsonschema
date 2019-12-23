@@ -5,9 +5,9 @@ Build forms with JSON Schema in React
 ## JSON Schema
 
 - https://json-schema.org/
+- Describes data of any shape, even a complete UI (with the JSON Hyper-Schema extension)
 - It's an IETF draft specification not yet accepted as standard.
 - There is no other international standard. There is [OpenAPI](https://www.openapis.org/) for REST APIs which is similar to JSON Schema but more broader.
-- It can describe any data in any shape, like a complete UI with JSON Hyper-Schema
 
 ## react-jsonschema-form
 
@@ -109,6 +109,12 @@ Combining the libraries above we have:
   }
 }
 ```
+
+### Validations
+
+- By default, form data are only validated when the form is submitted or when a new `formData` prop is passed to the Form component.
+- You can enable live form data validation by passing a `liveValidate` prop to the Form component, and set it to `true`. Then, everytime a value changes within the form data tree (eg. the user entering a character in a field), a validation operation is performed, and the validation results are reflected into the form state.
+- To disable validation entirely, you can set Form's `noValidate` prop to `true`.
 
 ### Grouping
 
