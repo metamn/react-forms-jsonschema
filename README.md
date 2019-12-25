@@ -81,6 +81,17 @@ Combining the libraries above we have:
 }
 ```
 
+### JSON-LD (Schema.org) integration
+
+- Definitions can be taken from the standard [Schema.org](https://schema.org/) vocabulary.
+- The question is how complete Schema.org is? Are there definitions for anything and everything?
+
+#### Resources
+
+- JSON Schema can be transformed to be a valid to Schema.org document: https://www.w3.org/2019/wot/json-schema#usage-examples
+- Any Schema.org vocabulary entry can be imported to JSON Schema with `id`: https://www.w3.org/2019/wot/json-schema#referencing-and-linking
+- Any Schema.org data type can be used inside JSOn Schema with `jsonld:context`: https://www.w3.org/2019/wot/json-schema#defining-a-json-ld-context-for-data-instances
+
 ### Conditionals
 
 - Display parts of the schema based on conditionals
